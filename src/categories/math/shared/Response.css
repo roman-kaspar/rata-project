@@ -1,0 +1,24 @@
+div.problem-line div.response {
+  background-color: #f3ebd4;
+  border-bottom: 1px solid #333;
+  padding: 6px;
+  margin-top: -6px;
+  display: flex;
+}
+
+div.problem-line div.response div.caret {
+  background-color: #666;
+  width: 1px;
+  height: 100%;
+  margin-left: 1px;
+  animation: caret-anim infinite 2s linear;
+}
+
+@keyframes caret-anim {
+  0% 100% {
+    background-color: #333;
+  }
+  50% {
+    background-color: #f3ebd4;
+  }
+}

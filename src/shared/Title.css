@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  margin: 6px;
+  margin-bottom: 12px;
+}
+
+header div {
+  font-weight: 400;
+}
+
+header div.title {
+  font-size: 33px;
+}
+
+header div.subtitle {
+  margin-top: -3px;
+  font-size: 13px;
+}
+
+header button {
+  background-color: white;
+  border: 0px;
+  margin-right: 12px;
+}
+
+header svg {
+  font-size: 30px;
+}

@@ -1,0 +1,25 @@
+div.math-int {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.math-int div.label {
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+div.math-int div.problem-line {
+  display: flex;
+}
+
+div.math-int div.problem-line div {
+  font-weight: 400;
+  font-size: 30px;
+}
+
+div.math-int div.response {
+  width: 100px;
+  height: 33px;
+}

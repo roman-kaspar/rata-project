@@ -1,0 +1,46 @@
+/*
+Primary Color:
+#C8AA72 #7D715B #5E410D #F3DCB3 #F3E8D4
+
+Secondary Color A:
+#C8B272 #7D745B #5E490D #F3E3B3 #F3EBD4
+
+Secondary Color B:
+#C89F72 #7D6D5B #5E370D #F3D4B3 #F3E4D4
+
+Complementary Color:
+#516485 #3F4653 #091D3E #AEC2E4 #C9D3E4
+*/
+
+div.nav-list button {
+  width: 100%;
+  margin-bottom: 6px;
+  display: block;
+  text-align: left;
+  padding: 6px 6px 6px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #333;
+}
+
+div.nav-list div.title {
+  font-size: 24px;
+}
+
+div.nav-list div.subtitle {
+  margin-top: -3px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+div.nav-list button.nav-app {
+  background-color: #c9d3e4;
+}
+
+div.nav-list button.nav-category {
+  background-color: #f3e3b3;
+}
+
+div.nav-list button.nav-module {
+  background-color: #f3d4b3;
+}

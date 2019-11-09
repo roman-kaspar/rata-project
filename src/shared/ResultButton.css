@@ -1,0 +1,35 @@
+div.results button {
+  width: 100%;
+  margin-bottom: 6px;
+  display: block;
+  text-align: left;
+  padding: 6px 6px 6px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #333;
+  background-color: #c9d3e4;
+}
+
+div.results button.last {
+  margin-bottom: 12px;
+}
+
+div.results button.problems {
+  background-color: #f3d4b3;
+}
+
+div.results div.title {
+  font-size: 21px;
+}
+
+div.results div.subtitle {
+  margin-top: -3px;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+div.results div.age {
+  padding-top: 3px;
+  font-size: 13px;
+  font-weight: 400;
+}

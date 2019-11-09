@@ -1,0 +1,45 @@
+div.num-pad {
+  margin-bottom: 3px;
+}
+
+div.num-pad div.num-pad-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.num-pad button.num-pad-btn {
+  width: calc(33.333333% - 2px);
+  height: 60px;
+  margin-top: 3px;
+  border-radius: 6px;
+  font-size: 24px;
+}
+
+div.num-pad button.num-pad-num {
+  background-color: #3f4653;
+  color: #aec2e4;
+  border: 1px solid #aec2e4;
+}
+
+div.num-pad button.num-pad-del {
+  background-color: white;
+  border: 0px;
+}
+
+div.num-pad button.num-pad-del svg {
+  font-size: 36px;
+}
+
+div.num-pad button.num-pad-submit {
+  background-color: white;
+  border: 0px;
+}
+
+div.num-pad button.num-pad-submit svg {
+  font-size: 24px;
+  padding-top: 3px;
+}
+
+div.num-pad path {
+  fill: #c89f72;
+}

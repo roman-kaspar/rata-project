@@ -1,0 +1,50 @@
+div.results {
+  flex: 1 0 auto;
+}
+
+div.results h2 {
+  font-size: 21px;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+div.results ul {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+div.results li {
+  margin-left: 24px;
+  margin-bottom: 2px;
+}
+
+div.results p {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+div.results td {
+  padding: 0px 3px 0px 3px;
+}
+
+div.results div.problem {
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+div.results svg {
+  font-size: 12px;
+}
+
+div.results svg.wrong path {
+  fill: red;
+}
+
+div.results svg.correct path {
+  fill: green;
+}
+
+div.results svg.slow path {
+  fill: #7d745b;
+}
