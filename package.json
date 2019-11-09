@@ -1,6 +1,6 @@
 {
   "name": "rata-project",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Modular framework for basic school exercises",
   "private": true,
   "scripts": {
