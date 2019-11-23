@@ -9,12 +9,13 @@ const View = ({ options }) => (<div className="problem">{options.a1} &#215; {opt
 const methods = [0, 0, 1, 2];
 
 // frequency of given number in the array drives the probability of that number being selected
-const numbers = [0, 1, 2, 3, 4, 4, 4, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 10];
+const numbers1 = [6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 10];
+const numbers2 = [0, 1, 2, 3, 4, 4, 4, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 10];
 
 export const mul10 = new Module({
-  routeName: 'mul10',
+  routeName: 'mul10b',
   title: 'malá násobilka',
-  subtitle: 'čísla do deseti (6)',
+  subtitle: 'čísla od šesti do deseti',
   onActivate: (ctx, options) => {
     const store = options.store || {};
     const { wrong, slow } = store;
@@ -22,7 +23,7 @@ export const mul10 = new Module({
     ctx.wrong = [...(wrong || [])];
     ctx.slow = [...(slow || [])];
     return {
-      exercises: 8,
+      exercises: 15,
       maxResponseLen: 3, // 0 .. 100
       timeLimit: 4000, // ms
     };
@@ -54,8 +55,8 @@ export const mul10 = new Module({
         }
       }
       if (method === 2) {
-        a1 = 6; // 2 + randomInt(4); // 2 .. 5
-        a2 = numbers[randomInt(numbers.length)];
+        a1 = numbers1[randomInt(numbers1.length)];
+        a2 = numbers2[randomInt(numbers2.length)];
       }
       // unique test: make sure there is enough unique problems!
       found = true;

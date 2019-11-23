@@ -68,6 +68,18 @@ function* loadStorage() {
     openedLast: Date.now(),
   };
   data[APP_KEY] = appUpdates;
+  // delete unused modules; category / array of modules
+  const unused = {
+    'math-int': ['mul10'],
+  };
+  Object.keys(unused).forEach((key) => {
+    const catData = data[key];
+    if (!catData || !catData.modules) { return; }
+    const { modules } = catData;
+    const cat = unused[key];
+    cat.forEach((name) => { delete modules[name]; });
+  });
+  //
   yield put(actions.setStorage(data));
   yield put(actions.updateStorage(APP_KEY, appUpdates));
 }
