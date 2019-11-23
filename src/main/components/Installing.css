@@ -1,0 +1,15 @@
+div.installing div {
+  padding-bottom: 9px;
+}
+
+div.installing button {
+  width: 100%;
+  margin-bottom: 6px;
+  display: block;
+  text-align: center;
+  padding: 6px 6px 6px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #333;
+  background-color: #ffe0e0;
+}

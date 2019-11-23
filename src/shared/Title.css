@@ -26,3 +26,7 @@ header button {
 header svg {
   font-size: 30px;
 }
+
+button.new-version path {
+  fill: red;
+}

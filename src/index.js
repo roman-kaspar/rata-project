@@ -39,15 +39,18 @@ router.start(() => {
     </StoreProvider>,
     document.getElementById('root'),
   );
-
   //
-  window.addEventListener('resize', () => {
-    store.dispatch(actions.getViewport());
-  });
-
-  // If you want your app to work offline and load faster, you can change
-  // unregister() to register() below. Note this comes with some pitfalls.
-  // Learn more about service workers: http://bit.ly/CRA-PWA
-
+  window.addEventListener('resize', () => { store.dispatch(actions.getViewport()); });
+  //
   serviceWorker.register();
+  navigator.serviceWorker.addEventListener('message', (event) => {
+    const { action } = event.data;
+    if (action === 'newVersionReady') { store.dispatch(actions.finishInstallation()); }
+  });
+  // connectivity
+  window.addEventListener('online', () => { store.dispatch(actions.checkOnline()); });
+  window.addEventListener('offline', () => { store.dispatch(actions.checkOnline()); });
+  // check for new app version at the beginning and then every 5 minutes
+  setTimeout(() => { store.dispatch(actions.checkVersion()); }, 1000 * 2);
+  setInterval(() => { store.dispatch(actions.checkVersion()); }, 1000 * 60 * 5);
 });

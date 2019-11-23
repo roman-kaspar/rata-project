@@ -10,7 +10,7 @@ const methods = [0, 0, 1, 2];
 
 export const sub100 = new Module({
   routeName: 'sub100',
-  title: 'odečítání',
+  title: 'odčítání',
   subtitle: 'čísla do sta',
   onActivate: (ctx, options) => {
     const store = options.store || {};
