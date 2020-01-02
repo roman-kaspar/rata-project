@@ -1,44 +1,96 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## rata-project
 
-## Available Scripts
+rata-project is a set of school exercises that I wrote for my children. Since they got their mobile phones
+for Xmas at the end of 2018, I wanted them to spend at least some amount of time with something meaningful
+(besides all the games they installed there).
 
-In the project directory, you can run:
+Sure, there are hundreds of educational games, but I wanted something tailored for them, something that
+could follow their progress at school. Also, most of the games are in English and focus on one subject.
+I wanted to have something in Czech and for all the subjects at once (mathematics, Czech, and English
+to start with).
 
-### `npm start`
+Finally, I use this as a negotiation tool with my children. Do you want to play on Playstation?
+Do you want to install a new game on your phone? Do you want to watch this movie? Then go, do some
+exercirses in your phone and then come back.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### PWA, hosting
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The application is written as a Progressive Web Application (PWA). It means that it works from the browser,
+but uses caching mechanisms and web worker process, so that it is fully working even when completely offline.
 
-### `npm test`
+One of the properties of PWAs is that you can use menu in the mobile browser and pick "Add to home screen"
+and then the web application behaves as any other application installed from App Store.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The application is hosted at [https://rata.roman-kaspar.cz/)](https://rata.roman-kaspar.cz/).
 
-### `npm run build`
+Once installed the application (when online) pings the server to check for newer versions. When available,
+the app will auto-update to the newest version.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### App concepts, goals
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+There are three main areas of the app:
+* exercises
+* results
+* help
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The exercises are grouped into categories (e.g. mathematics - integer calculus).
+The results and help follow the same hierarchy.
 
-### `npm run eject`
+There are three goals of the exercises:
+* correctness (correct answers)
+* speed
+* repeatable fast and correct answers
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+User (child) collects stars, up to three stars per exercise (one for all correct answers, second for correct
+and fast answers, and third for three correct and fast answers in row).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The system remembers wrong (and slow) answers and asks them repeatedly, until correct (or correct and fast)
+answer is provided.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Tech-stack
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* react
+* redux
+* router5
+* local-storage + data encryption
+* custom plain CSS
 
-## Learn More
+### Development
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+$ git clone ...
+$ cd ...
+$ yarn start  # to start the dev version
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+$ yarn test   # to run the linter
+$ yarn build  # to create production bundle
+```
+
+### Code structure
+
+TODO.
+
+### License
+
+The MIT License (MIT)
+
+Copyright (c) 2020 Roman Kaspar <roman.kaspar@seznam.cz>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+

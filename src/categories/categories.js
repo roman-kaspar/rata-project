@@ -7,7 +7,7 @@ import {
   names,
   params as routeParams,
 } from '../main/router/routes';
-import { VIEWS } from '../main/components/Results';
+import { RESULT_VIEWS } from '../main/components/const';
 
 import { mathInt } from './math/math-int/math-int';
 
@@ -124,7 +124,7 @@ class Categories {
           routeParams: params,
         };
         return {
-          View: VIEWS.MOD,
+          View: RESULT_VIEWS.MOD,
           data: res,
         };
       }
@@ -135,7 +135,7 @@ class Categories {
         routeParams: params,
       };
       return {
-        View: VIEWS.CAT,
+        View: RESULT_VIEWS.CAT,
         data: res,
       };
     }
@@ -167,7 +167,7 @@ class Categories {
       });
     });
     return {
-      View: VIEWS.TOP,
+      View: RESULT_VIEWS.TOP,
       data: res,
     };
   }

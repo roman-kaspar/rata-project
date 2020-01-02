@@ -6,14 +6,9 @@ import { params as RouteParams } from '../router/routes';
 import { tsToStr, msToStr, formatInt } from '../../shared/utils';
 import { categories } from '../../categories/categories';
 import { Icons } from '../../shared/Icons';
+import { RESULT_VIEWS } from './const';
 
 import './Results.css';
-
-export const VIEWS = {
-  TOP: 'top',
-  CAT: 'cat',
-  MOD: 'mod',
-};
 
 const TopLevelView = ({ data }) => {
   let last;
@@ -129,6 +124,7 @@ const getIcon = (correct, slow) => {
 
 const RunView = (options) => {
   const { routeParams, runs } = options.data;
+  const { stars, best } = options.data;
   const idx = ((runs && runs.length) || 0) - 1 - ((routeParams.run === -1) ? 0 : routeParams.run);
   if (Number.isNaN(idx) || (idx < 0)) {
     return (<div className="results"><p>data nejsou bohužel k dispozici</p></div>);
@@ -136,31 +132,44 @@ const RunView = (options) => {
   const { categ, module } = options;
   const View = categories.moduleView(categ, module);
   const run = runs[idx];
+  const praises = ['výborně', 'skvěle', 'super', 'paráda', 'výtečně', 'dokonale', 'úžasně'];
+  const praiseStar = praises[Math.floor(Math.random() * praises.length)];
+  const praiseBest = praises[Math.floor(Math.random() * praises.length)];
   return (
     <div className="results">
+      {
+        (routeParams.run === -1)
+        && (stars.updated === run.finished)
+        && (<h2>{praiseStar}! za tenhle výkon získáváš další hvězdu!</h2>)
+      }
+      {
+        (routeParams.run === -1)
+        && (best.updated === run.finished)
+        && (<h2>{praiseBest}! tohle byl tvůj nejlepší výkon!</h2>)
+      }
       <ul>
         <li>dokončeno: {tsToStr(run.finished)}</li>
         <li>v čase: {msToStr(run.time)}</li>
         <li>správných výsledků: {formatInt(run.correct)}</li>
         <li>špatných výsledků: {formatInt(run.elems.length - run.correct)}</li>
         <li>správných, ale pomalu: {formatInt(run.slow)}</li>
-        <h2>příklady:</h2>
-        <table><tbody>
-          {
-            run.elems.map((row, index) => {
-              const { Icon, cx } = getIcon(row.correct, row.slow);
-              return (
-                <tr key={index}>
-                  <td><Icon className={cx} /></td>
-                  <td><View options={row} /></td>
-                  <td>=</td>
-                  <td>{row.resp} {row.correct ? '' : `(${row.r.toString()})`}</td>
-                </tr>
-              );
-            })
-          }
-        </tbody></table>
       </ul>
+      <h2>příklady:</h2>
+      <table><tbody>
+        {
+          run.elems.map((row, index) => {
+            const { Icon, cx } = getIcon(row.correct, row.slow);
+            return (
+              <tr key={index}>
+                <td><Icon className={cx} /></td>
+                <td><View options={row} /></td>
+                <td>=</td>
+                <td>{row.resp} {row.correct ? '' : `(${row.r.toString()})`}</td>
+              </tr>
+            );
+          })
+        }
+      </tbody></table>
     </div>
   );
 };
@@ -227,8 +236,8 @@ const ResultsView = ({ route, categs, store }) => {
   const [ignore, categ, module] = route.name.split('.'); // eslint-disable-line no-unused-vars
   const { View, data } = categs.results(categ, module, route.params, store);
   let Result = TopLevelView;
-  if (View === VIEWS.CAT) { Result = CategoryView; }
-  if (View === VIEWS.MOD) { Result = ModuleView; }
+  if (View === RESULT_VIEWS.CAT) { Result = CategoryView; }
+  if (View === RESULT_VIEWS.MOD) { Result = ModuleView; }
   return (<Result categ={categ} module={module} data={data} />);
 };
 
