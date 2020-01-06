@@ -1,0 +1,9 @@
+div.mobile-error {
+  padding-bottom: 9px;
+}
+
+div.mobile-error span.bold {
+  white-space: nowrap;
+  font-weight: 400;
+  color: #111;
+}

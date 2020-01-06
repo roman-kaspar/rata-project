@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import { routeName } from './math-int-route';
 import { actions } from './math-int-reducer';
-import { NumPad } from '../shared/NumPad';
-import { Response } from '../shared/Response';
+import { NumPad } from '../../shared-components/NumPad';
+import { Response } from '../../shared-components/Response';
 import './math-int-view.css';
 
 class MathInt extends PureComponent {
@@ -60,7 +60,7 @@ class MathInt extends PureComponent {
 const mapStateToProps = (state) => ({
   module: state.categories[routeName].module,
   run: state.categories[routeName].run,
-  settings: state.categories[routeName].runSettings,
+  settings: state.categories[routeName].settings,
 });
 
 const mapDispatchToProps = {

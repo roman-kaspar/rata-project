@@ -1,7 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-// linked package, waiting for PR to be merged
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Div100vh from 'react-div-100vh';
 
 import { createStore, applyMiddleware } from 'redux';
@@ -10,12 +8,12 @@ import createSagaMiddleware from 'redux-saga';
 import { RouterProvider } from 'react-router5';
 import { router5Middleware } from 'redux-router5';
 
-import { router } from './main/router/router';
-import { reducer } from './main/reducers/reducer';
-import { saga } from './main/sagas/saga';
-import { App } from './main/components/App';
-import { actions } from './main/reducers/app';
-import * as serviceWorker from './serviceWorker';
+import { router } from './core/router/router';
+import { reducer } from './core/reducers/reducer';
+import { saga } from './core/sagas/saga';
+import { App } from './core/components/App';
+import { actions } from './core/reducers/app';
+import * as serviceWorker from './core/service-worker';
 
 const middlewares = [];
 if (process.env.NODE_ENV !== 'production') {
@@ -29,6 +27,7 @@ const store = createStore(reducer, applyMiddleware(...middlewares));
 sagaMiddleware.run(saga);
 
 router.start(() => {
+  // mount the app
   render(
     <StoreProvider store={store}>
       <RouterProvider router={router}>
@@ -39,9 +38,9 @@ router.start(() => {
     </StoreProvider>,
     document.getElementById('root'),
   );
-  //
+  // handle window resize event
   window.addEventListener('resize', () => { store.dispatch(actions.getViewport()); });
-  //
+  // service worker
   serviceWorker.register();
   navigator.serviceWorker.addEventListener('message', (event) => {
     const { action } = event.data;

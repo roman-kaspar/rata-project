@@ -1,14 +1,15 @@
 import { createReducer, createActions } from 'reduxsauce';
 
+const defaultSettings = {
+  exercises: 20, // number of questions in one run
+  maxResponseLen: 3, // 0 .. 999
+  timeLimit: 5000, // time limit for correct answer (in ms)
+};
+
 const initialState = {
   module: null,
-  settings: {
-    exercises: 20, // number of questions in one run
-    maxResponseLen: 3, // 0 .. 999
-    timeLimit: 5000, // time limit for correct answer (in ms)
-  },
   run: [],
-  runSettings: null,
+  settings: null,
 };
 
 const { Types, Creators } = createActions({
@@ -25,8 +26,8 @@ export const actions = Creators;
 const reset = (state = initialState, { module, settingsUpdates }) => ({
   ...state,
   module,
-  runSettings: {
-    ...(state.settings),
+  settings: {
+    ...(defaultSettings),
     ...(settingsUpdates),
   },
   run: [],

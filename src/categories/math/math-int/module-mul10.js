@@ -1,7 +1,7 @@
 import React from 'react';
-import { Module } from '../../module';
+import { Module } from '../../../core/module';
+import { randomInt } from '../../utils';
 
-const randomInt = (max) => (Math.floor(max * Math.random())); // 0, 1, ... max-1
 const View = ({ options }) => (<div className="problem">{options.a1} &#215; {options.a2}</div>);
 
 // method of selecting questions: 0: pick from 'wrong' array, 1: pick from 'slow' array, 2: generate new

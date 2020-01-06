@@ -1,16 +1,21 @@
 {
+  "name": "rata-project",
   "short_name": "rata-project",
-  "name": "posilovna pro chytré hlavy",
   "icons": [
     {
-      "src": "favicon.png",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-384x384.png",
+      "sizes": "384x384",
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://rata.roman-kaspar.cz",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff"
 }

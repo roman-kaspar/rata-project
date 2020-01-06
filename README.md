@@ -68,7 +68,60 @@ $ yarn build  # to create production bundle
 
 ### Code structure
 
-TODO.
+The source code is divided into the following folders:
+* `core`, where the main framework of the application is,
+* `categories`, where the exercises are coded in modules, and modules are grouped into categories (based on subjects),
+* `shared` for files that are used by both the core and the categories / modules, and
+* `service-worker`, where the code of servicer worker process is along with the build process for it.
+
+#### Core (the application framework)
+
+The core contains most of the code of the app, it is the heart of the application.
+It is managing the local-storage, the in-app routing, and provides main views for
+the available categories (navigation menu of the app), help, and results.
+
+It also takes care about (auto-)updating of the application.
+
+#### Categories
+
+Categories group modules (exercises) of the same type together, and provide
+exercise run-time loop of (present exercise - wait for response) along with
+the view for the exercises.
+
+After the loop finishes, the category code is responsible for updating the
+local-storage with the results.
+
+In the future, categories will also be providing color themes for shared
+components (e.g. keypads or inputs).
+
+#### Modules (exercises)
+
+Code for modules (exercises) is located with the categories they belong to.
+They are responsible for setting the parameters of the exercise-loop (e.g.
+how many exercises to generate in one run of the loop), and (most of all)
+for generating the exercises themselves.
+
+### Contributions
+
+If you want to contribute with a good idea for new module / exercise type,
+drop me an email to roman.kaspar@seznam.cz
+
+You can also fork the project, implement new functionality yourself, TEST IT
+PROPERLY, and then create a pull request back with the description of new
+code. However, I'd still prefer to discuss new ideas before you go ahead and
+code it, as I'd like to keep the project consistent (so cannot guarantee
+I would merge just any crazy idea you may have).
+
+This project is open source, so you can fork it any time and manage
+(and deploy) your own fork as you wish.
+
+### Commercial apps
+
+In case you can see how custom-tailored modules / categories would help your
+business (e.g. some training app for your organisation), you can again
+fork the project and develop it yourselves, or you can drop me an email,
+we can discuss the terms and conditions and I can develop it (white-labeled
+for your company) for you.
 
 ### License
 
