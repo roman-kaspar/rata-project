@@ -1,5 +1,6 @@
 header {
   display: flex;
+  flex: 0 0 auto;
   margin: 6px;
   margin-bottom: 12px;
 }

@@ -42,10 +42,12 @@ router.start(() => {
   window.addEventListener('resize', () => { store.dispatch(actions.getViewport()); });
   // service worker
   serviceWorker.register();
-  navigator.serviceWorker.addEventListener('message', (event) => {
-    const { action } = event.data;
-    if (action === 'newVersionReady') { store.dispatch(actions.finishInstallation()); }
-  });
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.addEventListener('message', (event) => {
+      const { action } = event.data;
+      if (action === 'newVersionReady') { store.dispatch(actions.finishInstallation()); }
+    });
+  }
   // connectivity
   window.addEventListener('online', () => { store.dispatch(actions.checkOnline()); });
   window.addEventListener('offline', () => { store.dispatch(actions.checkOnline()); });

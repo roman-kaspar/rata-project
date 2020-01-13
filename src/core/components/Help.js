@@ -152,6 +152,16 @@ const TopLevelView = ({ data }) => (
 
 const ChangeLogView = () => (
   <div className="help">
+    <h2>1.1.5</h2>
+    <ul>
+      <li>publikováno: 14.1.2020</li>
+      <li>modul "sčítání / čísla do dvaceti"</li>
+      <li>modul "odčítání / čísla do dvaceti"</li>
+      <li>modul "dělení / čísla do pěti"</li>
+      <li>modul "dělení / čísla od šesti do deseti"</li>
+      <li>úpravy stylů</li>
+    </ul>
+
     <h2>1.1.4</h2>
     <ul>
       <li>publikováno: 13.1.2020</li>
@@ -177,7 +187,7 @@ const ChangeLogView = () => (
     <h2>1.0.1</h2>
     <ul>
       <li>publikováno: 10.11.2019</li>
-      <li>modul "malá násobilka / čísla do deseti"</li>
+      <li>modul "malá násobilka / čísla od šesti do deseti"</li>
       <li>modul "sčítání / čísla do sta"</li>
       <li>modul "odčítání / čísla do sta"</li>
     </ul>
