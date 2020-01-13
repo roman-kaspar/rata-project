@@ -1,0 +1,31 @@
+div.help {
+  flex: 1 0 auto;
+}
+
+div.help h2 {
+  font-size: 21px;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+div.help ul {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+div.help li {
+  margin-left: 24px;
+  margin-bottom: 2px;
+}
+
+div.help p {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+div.help p span.bold {
+  white-space: nowrap;
+  font-weight: 400;
+  color: #111;
+}

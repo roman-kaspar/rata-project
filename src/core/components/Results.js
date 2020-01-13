@@ -6,7 +6,7 @@ import { PARAMS as ROUTE_PARAMS } from '../router/routes';
 import { tsToStr, msToStr, formatInt } from '../utils';
 import { categories } from '../categories';
 import { Icons } from '../../shared/Icons';
-import { RESULT_VIEWS } from '../constants';
+import { VIEWS } from '../constants';
 
 import './Results.css';
 
@@ -15,14 +15,6 @@ const TopLevelView = ({ data }) => {
   if (data.lastName) { last = data.categories.find((cat) => (cat.routeName === data.lastName)); }
   return (
     <div className="results">
-      {/* TODO: move this to bottom of global Help
-      -----
-        <div>+ nainstalováno: {tsToStr(data.installed)}</div>
-        <div>+ spuštění: {formatInt(data.opened)}</div>
-        <div>+ kategorie: {formatInt(data.categories.length)}</div>
-        <div>+ moduly: {formatInt(data.modules)}</div>
-      -----
-      */}
       <ul>
         <li>dokončená cvičení: {formatInt(data.finished)}</li>
         <li>hvězdy: {formatInt(data.stars)} / {formatInt(3 * data.modules)}</li>
@@ -232,12 +224,12 @@ const ModuleView = (options) => {
   );
 };
 
-const ResultsView = ({ route, categs, store }) => {
+const ResultsView = ({ route, store }) => {
   const [ignore, categ, module] = route.name.split('.'); // eslint-disable-line no-unused-vars
-  const { View, data } = categs.results(categ, module, route.params, store);
+  const { view, data } = categories.results(categ, module, route.params, store);
   let Result = TopLevelView;
-  if (View === RESULT_VIEWS.CAT) { Result = CategoryView; }
-  if (View === RESULT_VIEWS.MOD) { Result = ModuleView; }
+  if (view === VIEWS.CAT) { Result = CategoryView; }
+  if (view === VIEWS.MOD) { Result = ModuleView; }
   return (<Result categ={categ} module={module} data={data} />);
 };
 

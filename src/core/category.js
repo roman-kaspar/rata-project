@@ -10,6 +10,7 @@ export class Category {
   // + setModuleAction: createActions().Creators
   // + saga: function* {}
   // + View: React component
+  // + Help: React component
   //
   constructor(props) {
     this._props = props;
@@ -152,6 +153,14 @@ export class Category {
       });
     });
     return res;
+  }
+
+  numberOfModules() {
+    return this._modules.length;
+  }
+
+  help() {
+    return this._props.Help;
   }
 
   addModule(module) {

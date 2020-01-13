@@ -91,11 +91,13 @@ function* updateStorage() {
     ver: STORAGE_VER,
     data: LZString.compress(JSON.stringify(storage)),
   };
+  const str = JSON.stringify(obj);
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
+    localStorage.setItem(STORAGE_KEY, str);
   } catch (e) {
     // pass; can fail in private browser mode
   }
+  yield put(actions.setStorageBytes(2 * str.length));
 }
 
 const versionApi = async () => {
@@ -158,6 +160,11 @@ function* checkOnline() {
   yield put(actions.setOnline(navigator.onLine));
 }
 
+function resetArticleScroll() {
+  const collection = document.getElementsByTagName('article');
+  for (const article of collection) { article.scrollTo(0, 0); } // eslint-disable-line no-restricted-syntax
+}
+
 export function* saga() {
   yield fork(categories.sagas());
   // app saga
@@ -169,6 +176,7 @@ export function* saga() {
   yield takeLatest(types.START_INSTALLATION, startInstallation);
   yield takeLatest(types.FINISH_INSTALLATION, finishInstallation);
   yield takeLatest(types.CHECK_ONLINE, checkOnline);
+  yield takeLatest(types.RESET_SCROLL, resetArticleScroll);
   // inital actions
   yield put(actions.getViewport());
   yield put(actions.loadStorage());

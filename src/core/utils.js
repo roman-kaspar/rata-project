@@ -64,3 +64,27 @@ export const msToStr = (ms) => {
   if (!hrs) { return `${mins}:${(secs % 60).toString().padStart(2, '0')}`; }
   return `${hrs}:${(mins % 60).toString().padStart(2, '0')}:${(secs % 60).toString().padStart(2, '0')}`;
 };
+
+export const bytesToStr = (bytes) => {
+  if (bytes < 1024) { return `${bytes}B`; }
+  if (bytes < 10 * 1024) { return `${(bytes / 1024).toFixed(1)}kB`; }
+  if (bytes < 1024 * 1024) { return `${Math.round(bytes / 1024)}kB`; }
+  if (bytes < 10 * 1024 * 1024) { return `${(bytes / (1024 * 1024)).toFixed(1)}MB`; }
+  if (bytes < 1024 * 1024 * 1024) { return `${Math.round(bytes / (1024 * 1024))}MB`; }
+  if (bytes < 10 * 1024 * 1024 * 1024) { return `${(bytes / (1024 * 1024 * 1024)).toFixed(1)}GB`; }
+  return `${Math.round(bytes / (1024 * 1024 * 1024))}GB`;
+};
+
+export const getCategAcc = (num) => {
+  if (!num) { return '0 kategorií'; }
+  if (num === 1) { return '1 kategorii'; }
+  if (num < 5) { return `${num} kategorie`; }
+  return `${num} kategorií`;
+};
+
+export const getModuleAcc = (num) => {
+  if (!num) { return '0 modulů'; }
+  if (num === 1) { return '1 modul'; }
+  if (num < 5) { return `${num} moduly`; }
+  return `${num} modulů`;
+};

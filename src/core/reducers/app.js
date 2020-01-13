@@ -6,6 +6,7 @@ const initialState = {
     height: 0,
   },
   storage: null,
+  storageBytes: 0,
   newVersionAvailable: false,
   online: false,
 };
@@ -18,6 +19,7 @@ const { Types, Creators } = createActions({
   loadStorage: null, // handled in saga
   setStorage: ['data'], // handled here
   updateStorage: ['category', 'data'], // handled here and in saga
+  setStorageBytes: ['bytes'], // handled here
   //
   checkVersion: null, // handled in saga
   setNewVersionAvailable: ['version'], // handled here
@@ -26,7 +28,9 @@ const { Types, Creators } = createActions({
   finishInstallation: null, // handled in saga
   //
   setOnline: ['online'], // handled here
-  checkOnline: null, // handled in sage
+  checkOnline: null, // handled in saga
+  //
+  resetScroll: null, // handled in saga
 });
 
 export const types = Types;
@@ -40,6 +44,7 @@ const updateStorage = (state = initialState, { category, data }) => ({
   ...state,
   storage: { ...state.storage, [category]: data },
 });
+const setStorageBytes = (state = initialState, { bytes }) => ({ ...state, storageBytes: bytes });
 const setNewVersionAvailable = (state = initialState, { version }) => ({ ...state, newVersionAvailable: version });
 const setOnline = (state = initialState, { online }) => ({ ...state, online });
 
@@ -50,6 +55,7 @@ export const reducer = createReducer(
     [Types.SET_VIEWPORT]: setViewport,
     [Types.SET_STORAGE]: setStorage,
     [Types.UPDATE_STORAGE]: updateStorage,
+    [Types.SET_STORAGE_BYTES]: setStorageBytes,
     [Types.SET_NEW_VERSION_AVAILABLE]: setNewVersionAvailable,
     [Types.SET_ONLINE]: setOnline,
   },

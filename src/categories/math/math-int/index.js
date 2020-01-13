@@ -3,6 +3,7 @@ import { routeName } from './math-int-route';
 import { reducer, actions } from './math-int-reducer';
 import { saga } from './math-int-saga';
 import { View } from './math-int-view';
+import { Help } from './math-int-help';
 
 //
 import { mul5 } from './module-mul5';
@@ -18,6 +19,7 @@ export const mathInt = new Category({
   setModuleAction: actions.mathIntSetModule,
   saga,
   View,
+  Help,
 });
 
 mathInt.addModule(mul5);

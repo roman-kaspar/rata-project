@@ -9,7 +9,7 @@
     /results/:category/:module { back: ('category'|'top'), run: (integer|undefined), wrong: boolean, slow: boolean }
 
     /help
-    /help/:category { back: ('category'|'top') }
+    /help/:category { back: ('category'|'top'), system: boolean, changelog: boolean }
 
     /:category
     /:category/:module

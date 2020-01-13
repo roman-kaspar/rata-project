@@ -23,7 +23,7 @@ export const MobileOnly = ({ width, height }) => (
     <div className="mobile-error">
       Tento program je určený výhradně pro mobilní telefony držené na výšku.
       Otevřete tuto stránku v prohlížeči na mobilním telefonu a v nabídce
-      stránky vyberte možnost "Přidat na plochu" (nebo její ekvivalent).
+      (sdílení) stránky vyberte možnost "Přidat na plochu" (nebo její ekvivalent).
       Takto nainstalovanou aplikaci potom otevřete.
     </div>
     <div className="mobile-error">

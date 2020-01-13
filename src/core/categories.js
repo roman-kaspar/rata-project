@@ -3,7 +3,7 @@ import { fork } from 'redux-saga/effects';
 
 import { Icons } from '../shared/Icons';
 import { routes, NAMES, PARAMS as ROUTE_PARAMS } from './router/routes';
-import { RESULT_VIEWS } from './constants';
+import { VIEWS } from './constants';
 
 import { mathInt } from '../categories/math/math-int/index';
 
@@ -120,7 +120,7 @@ class Categories {
           routeParams: params,
         };
         return {
-          View: RESULT_VIEWS.MOD,
+          view: VIEWS.MOD,
           data: res,
         };
       }
@@ -131,7 +131,7 @@ class Categories {
         routeParams: params,
       };
       return {
-        View: RESULT_VIEWS.CAT,
+        view: VIEWS.CAT,
         data: res,
       };
     }
@@ -163,7 +163,40 @@ class Categories {
       });
     });
     return {
-      View: RESULT_VIEWS.TOP,
+      view: VIEWS.TOP,
+      data: res,
+    };
+  }
+
+  help(category, params) {
+    if (category) {
+      // category view
+      const cat = this._categories.find((c) => (c.routeName() === category));
+      const res = {
+        View: cat.help(),
+        routeParams: params,
+      };
+      return {
+        view: VIEWS.CAT,
+        data: res,
+      };
+    }
+    // top-level
+    const res = {
+      categories: [],
+      modules: 0,
+    };
+    this._categories.forEach((cat) => {
+      const { title, subtitle } = cat.title();
+      res.modules += cat.numberOfModules();
+      res.categories.push({
+        title,
+        subtitle,
+        routeName: cat.routeName(),
+      });
+    });
+    return {
+      view: VIEWS.TOP,
       data: res,
     };
   }

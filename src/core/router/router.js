@@ -4,6 +4,7 @@ import transitionPath from 'router5-transition-path';
 
 import { NAMES, routes } from './routes';
 import { categories } from '../categories';
+import { actions } from '../reducers/app';
 
 const onRouteChangeMiddleware = (routeList) => (router, dependencies) => (toState, fromState, done) => {
   const { toActivate, toDeactivate } = transitionPath(toState, fromState);
@@ -21,6 +22,7 @@ const onRouteChangeMiddleware = (routeList) => (router, dependencies) => (toStat
     const route = routeList.find((r) => (r.name === name));
     if (route && route.onActivate) { route.onActivate(state, dispatch); }
   });
+  dispatch(actions.resetScroll());
   done();
 };
 

@@ -7,6 +7,7 @@ import { Icons } from '../../shared/Icons';
 import { NavList } from './NavList';
 import { categories } from '../categories';
 import { Results } from './Results';
+import { Help } from './Help';
 
 const getTitle = (route) => {
   const [top, level1, level2] = route.name.split('.');
@@ -19,7 +20,12 @@ const getTitle = (route) => {
       res.subtitle = item.subtitle;
       if (top !== NAMES.ROOT) {
         res.icon = Icons.NavBack;
-        res.route = { name: NAMES.ROOT };
+        if ((top === NAMES.HELP) && (route.params.changelog || route.params.system)) {
+          res.subtitle = (route.params.changelog ? 'historie změn' : 'systémové informace');
+          res.route = { name: NAMES.HELP };
+        } else {
+          res.route = { name: NAMES.ROOT };
+        }
       } else {
         res.icon = Icons.AppIcon;
       }
@@ -91,9 +97,9 @@ const getView = (route) => {
       buttons = categories.buttons();
       return (<NavList buttons={buttons} />);
     case NAMES.RESULTS:
-      return (<Results route={route} categs={categories} />);
+      return (<Results route={route} />);
     case NAMES.HELP:
-      return (<div>TODO</div>);
+      return (<Help route={route} />);
     default:
       if (module) {
         View = categories.view(top);
