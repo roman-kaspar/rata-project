@@ -1,0 +1,20 @@
+div.czech-ml {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.czech-ml div.label {
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+div.czech-ml div.problem-line {
+  display: flex;
+}
+
+div.czech-ml div.problem-line div {
+  font-weight: 400;
+  font-size: 30px;
+}

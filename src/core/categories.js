@@ -6,6 +6,7 @@ import { routes, NAMES, PARAMS as ROUTE_PARAMS } from './router/routes';
 import { VIEWS } from './constants';
 
 import { mathInt } from '../categories/math/math-int/index';
+import { czechML } from '../categories/czech/czech-ml/index';
 
 class Categories {
   constructor() {
@@ -208,3 +209,4 @@ class Categories {
 
 export const categories = new Categories();
 categories.add(mathInt);
+categories.add(czechML);

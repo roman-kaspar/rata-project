@@ -1,0 +1,14 @@
+div.choice-two-pad {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.choice-two-pad button.choice-two-pad-btn {
+  width: calc(33.333333% - 2px);
+  height: 60px;
+  border-radius: 6px;
+  font-size: 24px;
+  background-color: #3f4653;
+  color: #aec2e4;
+  border: 1px solid #aec2e4;
+}
