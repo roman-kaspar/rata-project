@@ -13,7 +13,7 @@ export const Help = () => (
       Limity pro rychlé odpovědi:
     </p>
     <ul>
-      <li>vyjmenovaná slova po B: 2,5s</li>
+      <li>vyjmenovaná slova: 2,5s</li>
     </ul>
   </>
 );

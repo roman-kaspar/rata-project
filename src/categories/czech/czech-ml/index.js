@@ -7,6 +7,8 @@ import { Help } from './czech-ml-help';
 
 //
 import { wIYb } from './module-w-iy-b';
+import { wIYl } from './module-w-iy-l';
+import { wIYm } from './module-w-iy-m';
 
 export const czechML = new Category({
   routeName,
@@ -20,3 +22,5 @@ export const czechML = new Category({
 });
 
 czechML.addModule(wIYb);
+czechML.addModule(wIYl);
+czechML.addModule(wIYm);

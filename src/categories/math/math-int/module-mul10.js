@@ -1,6 +1,6 @@
 import React from 'react';
 import { Module } from '../../../core/module';
-import { randomInt } from '../../utils';
+import { randomInt, onModuleActivate } from '../../utils';
 
 const View = ({ options }) => (<div className="problem">{options.a1} &#215; {options.a2}</div>);
 
@@ -17,16 +17,8 @@ export const mul10 = new Module({
   title: 'malá násobilka',
   subtitle: 'čísla od šesti do deseti',
   onActivate: (ctx, options) => {
-    const store = options.store || {};
-    const { wrong, slow } = store;
-    ctx.prev = [];
-    ctx.wrong = [...(wrong || [])];
-    ctx.slow = [...(slow || [])];
-    return {
-      exercises: 15,
-      maxResponseLen: 3, // 0 .. 100
-      timeLimit: 4000, // ms
-    };
+    onModuleActivate(ctx, options);
+    return { timeLimit: 5000 };
   },
   next: (ctx) => {
     let found = false;

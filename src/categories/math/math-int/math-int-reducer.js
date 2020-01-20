@@ -1,9 +1,9 @@
 import { createReducer, createActions } from 'reduxsauce';
 
 const defaultSettings = {
-  exercises: 20, // number of questions in one run
+  exercises: 15, // number of questions in one run
   maxResponseLen: 3, // 0 .. 999
-  timeLimit: 5000, // time limit for correct answer (in ms)
+  timeLimit: 4000, // time limit for correct answer (in ms)
 };
 
 const initialState = {

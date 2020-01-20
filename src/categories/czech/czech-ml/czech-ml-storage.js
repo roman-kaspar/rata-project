@@ -29,6 +29,7 @@ export const update = (storage, module, run, settings) => {
         const idx = mod.wrong.indexOf(elWrong);
         mod.wrong.splice(idx, 1);
       }
+      if (slow) { runSlow += 1; }
       if (slow && !elSlow && (mod.slow.length < KEEP_SLOW)) { // insert
         mod.slow.push({
           i: ex.i,
@@ -55,8 +56,6 @@ export const update = (storage, module, run, settings) => {
         mod.slow.splice(idx, 1);
       }
     }
-
-    if (slow) { runSlow += 1; }
 
     runElems.push({
       i: ex.i,

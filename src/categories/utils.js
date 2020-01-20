@@ -30,3 +30,12 @@ export const initCategoryStorage = (storage, module) => {
     },
   };
 };
+
+export const onModuleActivate = (ctx, options) => {
+  const store = options.store || {};
+  const { wrong, slow } = store;
+  ctx.prev = [];
+  ctx.wrong = [...(wrong || [])];
+  ctx.slow = [...(slow || [])];
+  return {};
+};

@@ -17,10 +17,10 @@ export const Help = () => (
       <li>odčítání / čísla do dvaceti: 4s</li>
       <li>násobení / čísla do pěti: 4s</li>
       <li>dělení / čísla do pěti: 4s</li>
-      <li>násobení / čísla od šesti do deseti: 4s</li>
-      <li>dělení / čísla od šesti do deseti: 4s</li>
-      <li>sčítání / čísla do sta: 5s</li>
-      <li>odčítání / čísla do sta: 5s</li>
+      <li>násobení / čísla od šesti do deseti: 5s</li>
+      <li>dělení / čísla od šesti do deseti: 5s</li>
+      <li>sčítání / čísla do sta: 6s</li>
+      <li>odčítání / čísla do sta: 6s</li>
     </ul>
   </>
 );
