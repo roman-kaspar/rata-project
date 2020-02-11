@@ -77,6 +77,7 @@ const CategoryView = ({ categ, data }) => {
           subtitle: mod.subtitle,
           routeName: `${categ}.${mod.routeName}`,
           lastTime: mod.usage.lastTime,
+          lastResult: mod.usage.lastResult,
           routeParams: { ...(data.routeParams) },
         }} />
       ))}

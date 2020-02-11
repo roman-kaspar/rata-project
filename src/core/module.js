@@ -57,6 +57,15 @@ export class Module {
       res.finished = storage.finished.count;
       res.lastTime = storage.finished.updated;
       res.stars = storage.stars.count;
+      if (storage.runs && storage.runs.length) {
+        const lastRun = storage.runs[storage.runs.length - 1];
+        res.lastResult = {
+          correct: lastRun.correct,
+          total: storage.exercises,
+          slow: lastRun.slow,
+          time: lastRun.time,
+        };
+      }
     }
     return res;
   }

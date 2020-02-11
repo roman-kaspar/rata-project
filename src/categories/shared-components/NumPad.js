@@ -20,6 +20,7 @@ export const NumPad = ({
       update(str);
     }
   };
+  const cx = (val.length ? '#c89f72' : '#bbb');
   return (
     <div className="num-pad">
       <div className="num-pad-line">
@@ -39,11 +40,12 @@ export const NumPad = ({
       </div>
       <div className="num-pad-line">
         <button className="num-pad-btn num-pad-del" type="button" onClick={() => { myUpdate(delVal); }}>
-          {Icons.Backspace({ color: '#c89f72' })}
+          {Icons.Backspace({ color: cx, fill: cx })}
         </button>
         <button className="num-pad-btn num-pad-num" type="button" onClick={() => { myUpdate(`${val}0`); }}>0</button>
-        <button className="num-pad-btn num-pad-submit" type="button" onClick={() => { submit(val); }}>
-          {Icons.Submit({ color: '#c89f72' })}
+        <button className="num-pad-btn num-pad-submit" type="button"
+         onClick={() => { if (val.length) { submit(val); } }}>
+          {Icons.Submit({ color: cx, fill: cx })}
         </button>
       </div>
     </div>
