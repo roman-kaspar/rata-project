@@ -101,7 +101,7 @@ const dictionary = [
   { text: 'zlý úm_sl', valIdx: 0, correct: 'y' },
   { text: 'Jarm_la', valIdx: 0, correct: 'i' },
   { text: 'Kam_la', valIdx: 0, correct: 'i' },
-  { text: 'Jana se m_lila', valIdx: 1, correct: 'í' },
+  { text: 'Jana se m_lila', valIdx: 1, correct: 'ý' },
   { text: 'M_lan', valIdx: 0, correct: 'i' },
   { text: 'Petr nezam_ká', valIdx: 0, correct: 'y' },
   { text: 'přiznal jsem om_l', valIdx: 0, correct: 'y' },
@@ -118,7 +118,7 @@ const View = ({ options }) => (<div className="problem">{dictionary[options.i].t
 const methods = [0, 0, 1, 2];
 
 export const wIYm = new Module({
-  routeName: 'w-iy-m',
+  routeName: 'w-iy-m-2',
   title: 'i/y po M',
   subtitle: 'vyjmenovaná slova',
   onActivate: onModuleActivate,

@@ -18,7 +18,6 @@ const dictionary = [
   { text: 'slepíme pap_r', valIdx: 1, correct: 'í' },
   { text: 'lep_dlo na papír', valIdx: 0, correct: 'i' },
   { text: 'p_l lučního kvítí', valIdx: 0, correct: 'y' },
-  { text: 'děti sb_rají odpad', valIdx: 1, correct: 'í' },
   { text: 'malá op_čka', valIdx: 0, correct: 'i' },
   { text: 'p_šný jako páv', valIdx: 0, correct: 'y' },
   { text: 'brněnský p_vovar', valIdx: 0, correct: 'i' },
@@ -48,7 +47,7 @@ const dictionary = [
   { text: 'nepij p_vo', valIdx: 0, correct: 'i' },
   { text: 'nep_j pivo', valIdx: 0, correct: 'i' },
   { text: 'přep_chový palác', valIdx: 0, correct: 'y' },
-  { text: 'suché p_liny', valIdx: 0, correct: 'y' },
+  { text: 'suché p_liny', valIdx: 0, correct: 'i' },
   { text: 'starý sp_s', valIdx: 0, correct: 'i' },
   { text: 'p_lná hospodyňka', valIdx: 0, correct: 'i' },
   { text: 'dívka p_ští', valIdx: 0, correct: 'i' },
@@ -92,7 +91,7 @@ const dictionary = [
   { text: 'kapky se třp_tily', valIdx: 0, correct: 'y' },
   { text: 'p_sklavý hlásek', valIdx: 0, correct: 'i' },
   { text: 'nap_nat lano', valIdx: 1, correct: 'í' },
-  { text: 'smrkové p_liny', valIdx: 0, correct: 'y' },
+  { text: 'smrkové p_liny', valIdx: 0, correct: 'i' },
   { text: 'p_tlovina', valIdx: 0, correct: 'y' },
   { text: 'nep_tlačte v lese', valIdx: 0, correct: 'y' },
   { text: 'malé kop_tko', valIdx: 1, correct: 'ý' },
@@ -130,7 +129,7 @@ const View = ({ options }) => (<div className="problem">{dictionary[options.i].t
 const methods = [0, 0, 1, 2];
 
 export const wIYp = new Module({
-  routeName: 'w-iy-p',
+  routeName: 'w-iy-p-3',
   title: 'i/y po P',
   subtitle: 'vyjmenovaná slova',
   onActivate: onModuleActivate,

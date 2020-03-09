@@ -102,6 +102,7 @@ const dictionary = [
   { text: 'zb_tečně vstával', valIdx: 0, correct: 'y' },
   { text: 'zlob_l se', valIdx: 0, correct: 'i' },
   { text: 'sb_rka známek', valIdx: 1, correct: 'í' },
+  { text: 'děti sb_rají odpad', valIdx: 1, correct: 'í' },
   { text: 'b_t unavený', valIdx: 1, correct: 'ý' },
   { text: 'silný b_č', valIdx: 0, correct: 'i' },
   { text: 'neb_dlím tam', valIdx: 0, correct: 'y' },

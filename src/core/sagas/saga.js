@@ -71,6 +71,7 @@ function* loadStorage() {
   // delete unused modules; category / array of modules
   const unused = {
     'math-int': ['mul10'],
+    'czech-ml': ['w-iy-m', 'w-iy-p', 'w-iy-p-2'],
   };
   Object.keys(unused).forEach((key) => {
     const catData = data[key];
