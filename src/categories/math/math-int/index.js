@@ -14,11 +14,13 @@ import { mul10 } from './module-mul10';
 import { div10 } from './module-div10';
 import { add100 } from './module-add100';
 import { sub100 } from './module-sub100';
+import { add1000 } from './module-add1000';
+import { sub1000 } from './module-sub1000';
 
 export const mathInt = new Category({
   routeName,
   title: 'matematika',
-  subtitle: 'celočíselné počítání do sta',
+  subtitle: 'celočíselné počítání',
   reducer,
   setModuleAction: actions.mathIntSetModule,
   saga,
@@ -34,3 +36,5 @@ mathInt.addModule(mul10);
 mathInt.addModule(div10);
 mathInt.addModule(add100);
 mathInt.addModule(sub100);
+mathInt.addModule(add1000);
+mathInt.addModule(sub1000);
