@@ -9,7 +9,7 @@ const values = [
 ];
 
 // http://www.zlobidlo.cz/rodice/cviceni-vyjmenovana-slova-p
-const dictionary = [
+export const dictionary = [
   { text: 'netop_ří tělo', valIdx: 1, correct: 'ý' },
   { text: 'hraju si na p_sku', valIdx: 1, correct: 'í' },
   { text: 'p_tel brambor', valIdx: 0, correct: 'y' },
@@ -67,7 +67,6 @@ const dictionary = [
   { text: 'líný slep_š', valIdx: 1, correct: 'ý' },
   { text: 'velký netop_r', valIdx: 1, correct: 'ý' },
   { text: 'klop_tla o balvan', valIdx: 1, correct: 'ý' },
-  { text: 'pol_kej pomalu', valIdx: 0, correct: 'y' },
   { text: 'šp_navé kalhoty', valIdx: 0, correct: 'i' },
   { text: 'p_chlavé trny', valIdx: 0, correct: 'i' },
   { text: 'zp_tovat svědomí', valIdx: 0, correct: 'y' },

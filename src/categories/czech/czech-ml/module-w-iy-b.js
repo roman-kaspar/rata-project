@@ -9,7 +9,7 @@ const values = [
 ];
 
 // http://www.zlobidlo.cz/rodice/cviceni-vyjmenovana-slova-b
-const dictionary = [
+export const dictionary = [
   { text: 'těžké živob_tí', valIdx: 0, correct: 'y' },
   { text: 'b_lá mlha', valIdx: 1, correct: 'í' },
   { text: 'b_tva na poli', valIdx: 0, correct: 'i' },

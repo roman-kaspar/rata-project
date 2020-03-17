@@ -9,7 +9,7 @@ const values = [
 ];
 
 // http://www.zlobidlo.cz/rodice/cviceni-vyjmenovana-slova-l
-const dictionary = [
+export const dictionary = [
   { text: 'l_ška Bystrouška', valIdx: 0, correct: 'i' },
   { text: 'vel_ká lampa', valIdx: 0, correct: 'i' },
   { text: 'strom l_pa', valIdx: 1, correct: 'í' },
