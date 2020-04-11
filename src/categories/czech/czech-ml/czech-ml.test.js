@@ -16,6 +16,8 @@ const testDictionary = (dict, letter) => {
   const rx2 = new RegExp(`${letter}_`, 'ig');
   dict.forEach((item) => {
     expect(typeof item).toBe('object');
+    expect(typeof item.text).toBe('string');
+    expect(item.text.length).toBeLessThan(20);
     const matches1 = item.text.match(rx1);
     expect(matches1).toBeTruthy();
     expect(matches1.length).toEqual(1);

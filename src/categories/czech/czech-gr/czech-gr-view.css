@@ -1,0 +1,26 @@
+div.czech-gr {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+div.czech-gr div.label {
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+div.czech-gr div.problem-line {
+  display: flex;
+}
+
+div.czech-gr div.problem-line div {
+  font-weight: 300;
+  font-size: 30px;
+}
+
+div.czech-gr div.problem-line span.highlight {
+  font-weight: 400;
+  font-size: 30px;
+  color: #c89f72;
+}

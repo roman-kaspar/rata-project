@@ -48,3 +48,8 @@ div.results svg.correct path {
 div.results svg.slow path {
   fill: #7d745b;
 }
+
+div.results div.problem span.highlight {
+  font-weight: 400;
+  color: #c89f72;
+}

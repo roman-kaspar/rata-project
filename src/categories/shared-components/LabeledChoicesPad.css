@@ -1,0 +1,30 @@
+div.choices-pad-label {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+div.choices-pad-btns {
+  margin-bottom: 18px;
+}
+
+div.choices-pad-btns button {
+  height: 48px;
+  border-radius: 6px;
+  font-size: 18px;
+  padding-left: 6px;
+  padding-right: 6px;
+  margin-right: 6px;
+  min-width: 36px;
+}
+
+div.choices-pad-btns button.choices-pad-btn {
+  background-color: white;
+  color: #3f4653;
+  border: 1px solid #3f4653;
+}
+
+div.choices-pad-btns button.choices-pad-btn-selected {
+  background-color: #3f4653;
+  color: #aec2e4;
+  border: 1px solid #aec2e4;
+}

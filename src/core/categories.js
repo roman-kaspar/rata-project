@@ -7,6 +7,7 @@ import { VIEWS } from './constants';
 
 import { mathInt } from '../categories/math/math-int/index';
 import { czechML } from '../categories/czech/czech-ml/index';
+import { czechGr } from '../categories/czech/czech-gr/index';
 
 class Categories {
   constructor() {
@@ -210,3 +211,4 @@ class Categories {
 export const categories = new Categories();
 categories.add(mathInt);
 categories.add(czechML);
+categories.add(czechGr);

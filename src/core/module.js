@@ -7,6 +7,7 @@ export class Module {
   // - onDeactivate: (ctx, options) => {} || undefined
   // + next: (ctx) => ({})
   // + View: React component
+  // + Controls: React component || undefined
   constructor(props) {
     this._props = props;
   }
@@ -45,6 +46,10 @@ export class Module {
 
   view() {
     return this._props.View;
+  }
+
+  controls() {
+    return this._props.Controls;
   }
 
   usage(storage) {

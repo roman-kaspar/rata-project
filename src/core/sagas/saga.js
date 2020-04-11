@@ -101,8 +101,13 @@ function* updateStorage() {
   yield put(actions.setStorageBytes(2 * str.length));
 }
 
-const versionApi = async () => {
-  const response = await fetch('/version.json');
+const versionApi = async (uuid) => {
+  const response = await fetch('/version.json', {
+    method: 'POST',
+    headers: {
+      'X-Client-ID': uuid,
+    },
+  });
   let body;
   if (response.ok) {
     body = await response.json();
@@ -116,10 +121,13 @@ const versionApi = async () => {
   };
 };
 
+const getUuid = (state) => (state.app.storage[APP_KEY].uuid);
 const getAvailableVersion = (state) => (state.app.newVersionAvailable);
 function* checkVersion() {
+  const uuid = yield select(getUuid);
+  if (!uuid) { return; }
   try {
-    const data = yield call(versionApi);
+    const data = yield call(versionApi, uuid);
     if (data.ok) {
       const ver = yield select(getAvailableVersion);
       let updateNext = false;
