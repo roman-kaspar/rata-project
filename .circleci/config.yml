@@ -6,15 +6,12 @@ jobs:
     working_directory: ~/rata-project
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Clean yarn cache
+          command: yarn cache clean
       - run:
           name: Install packages
           command: yarn
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
       - run:
           name: Create bundle
           command: yarn build
