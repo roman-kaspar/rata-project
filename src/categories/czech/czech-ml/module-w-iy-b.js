@@ -123,6 +123,8 @@ export const wIYb = new Module({
   title: 'i/y po B',
   subtitle: 'vyjmenovaná slova',
   onActivate: onModuleActivate,
-  next: createNext(dictionary, values, methods),
+  next: createNext(dictionary, methods),
   View,
+  correctResp: ({ i }) => (dictionary[i].correct),
+  choices: ({ i }) => (values[dictionary[i].valIdx]),
 });

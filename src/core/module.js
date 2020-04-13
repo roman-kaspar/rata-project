@@ -7,7 +7,9 @@ export class Module {
   // - onDeactivate: (ctx, options) => {} || undefined
   // + next: (ctx) => ({})
   // + View: React component
-  // + Controls: React component || undefined
+  // + correctResp: (opts) => string
+  //
+  // + ... any other property, can be retrieved using call of extra() method
   constructor(props) {
     this._props = props;
   }
@@ -48,8 +50,12 @@ export class Module {
     return this._props.View;
   }
 
-  controls() {
-    return this._props.Controls;
+  correctResp() {
+    return this._props.correctResp;
+  }
+
+  extra(propName) {
+    return this._props[propName];
   }
 
   usage(storage) {

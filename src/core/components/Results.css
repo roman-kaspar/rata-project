@@ -33,6 +33,11 @@ div.results div.problem {
   margin-bottom: 2px;
 }
 
+div.results div.response {
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
 div.results svg {
   font-size: 12px;
 }

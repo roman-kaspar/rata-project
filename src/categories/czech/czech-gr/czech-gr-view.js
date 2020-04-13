@@ -14,7 +14,7 @@ const CzechGr = (props) => {
 
   const current = run[run.length - 1];
   const Problem = module.view();
-  const Controls = module.controls();
+  const Controls = module.extra('Controls');
 
   return (
     <div className="czech-gr">

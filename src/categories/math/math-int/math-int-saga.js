@@ -38,7 +38,8 @@ function* exerciseLoop() {
     }));
   }
   const { run, settings } = yield select(runResults);
-  const updated = update(storage, moduleName, run, settings);
+  const correctResp = module.correctResp();
+  const updated = update(storage, moduleName, correctResp, run, settings);
   yield put(appActions.updateStorage(routeName, updated));
   yield put(routerActions.navigateTo(
     `${NAMES.RESULTS}.${routeName}.${moduleName}`,

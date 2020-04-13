@@ -1,10 +1,9 @@
 import { randomInt } from '../../utils';
 
-export const createNext = (dictionary, idx2resp, methods) => ((ctx) => {
+export const createNext = (dictionary, methods) => ((ctx) => {
   let found = false;
-  let index;
-  let result;
   let idx;
+  let index;
   let method;
   while (!found) {
     method = methods[randomInt(methods.length)];
@@ -12,7 +11,6 @@ export const createNext = (dictionary, idx2resp, methods) => ((ctx) => {
       if (ctx.wrong.length) {
         idx = randomInt(ctx.wrong.length);
         index = ctx.wrong[idx].i;
-        result = ctx.wrong[idx].r;
       } else {
         method = 1;
       }
@@ -21,7 +19,6 @@ export const createNext = (dictionary, idx2resp, methods) => ((ctx) => {
       if (ctx.slow.length) {
         idx = randomInt(ctx.slow.length);
         index = ctx.slow[idx].i;
-        result = ctx.slow[idx].r;
       } else {
         method = 2;
       }
@@ -29,7 +26,6 @@ export const createNext = (dictionary, idx2resp, methods) => ((ctx) => {
     if (method === 2) {
       idx = randomInt(dictionary.length);
       index = idx;
-      result = idx2resp(dictionary[idx].resp);
     }
     found = true;
     // unique test: make sure there is enough unique problems!
@@ -41,8 +37,5 @@ export const createNext = (dictionary, idx2resp, methods) => ((ctx) => {
     if (method === 1) { ctx.slow.splice(idx, 1); }
   }
   ctx.prev.push({ i: index });
-  return {
-    i: index,
-    c: result,
-  };
+  return { i: index };
 });

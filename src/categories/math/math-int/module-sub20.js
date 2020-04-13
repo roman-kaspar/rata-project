@@ -60,11 +60,8 @@ export const sub20 = new Module({
       if (method === 1) { ctx.slow.splice(idx, 1); }
     }
     ctx.prev.push({ a1, a2 });
-    return {
-      a1,
-      a2,
-      r: (a1 - a2),
-    };
+    return { a1, a2 };
   },
   View,
+  correctResp: ({ a1, a2 }) => ((a1 - a2).toString()),
 });

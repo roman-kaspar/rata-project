@@ -65,11 +65,8 @@ export const mul5 = new Module({
       a2 = t;
     }
     ctx.prev.push({ a1, a2 });
-    return {
-      a1,
-      a2,
-      r: (a1 * a2),
-    };
+    return { a1, a2 };
   },
   View,
+  correctResp: ({ a1, a2 }) => ((a1 * a2).toString()),
 });

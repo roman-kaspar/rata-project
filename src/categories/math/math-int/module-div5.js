@@ -60,11 +60,8 @@ export const div5 = new Module({
       if (method === 1) { ctx.slow.splice(idx, 1); }
     }
     ctx.prev.push({ a1, a2 });
-    return {
-      a1,
-      a2,
-      r: a1,
-    };
+    return { a1, a2 };
   },
   View,
+  correctResp: ({ a1 }) => (a1.toString()),
 });

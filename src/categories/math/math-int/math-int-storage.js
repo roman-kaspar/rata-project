@@ -8,7 +8,7 @@ const KEEP_RUNS = 5;
 // when to give the third star
 const MAX_STARS_RUNS = 3;
 
-export const update = (storage, module, run, settings) => {
+export const update = (storage, module, correctResp, run, settings) => {
   const store = initCategoryStorage(storage, module);
   const mod = store.modules[module];
   mod.exercises = settings.exercises;
@@ -19,7 +19,7 @@ export const update = (storage, module, run, settings) => {
   run.forEach((ex) => {
     const elWrong = mod.wrong.find((e) => ((e.a1 === ex.a1) && (e.a2 === ex.a2)));
     const elSlow = mod.slow.find((e) => ((e.a1 === ex.a1) && (e.a2 === ex.a2)));
-    const correct = (ex.r.toString() === ex.response.toString());
+    const correct = (correctResp(ex) === ex.response.toString());
     const time = ex.endMs - ex.startMs;
     const slow = (time > settings.timeLimit);
 
@@ -34,7 +34,6 @@ export const update = (storage, module, run, settings) => {
         mod.slow.push({
           a1: ex.a1,
           a2: ex.a2,
-          r: ex.r,
         });
       }
       if (!slow && elSlow) { // remove
@@ -46,7 +45,6 @@ export const update = (storage, module, run, settings) => {
         mod.wrong.push({
           a1: ex.a1,
           a2: ex.a2,
-          r: ex.r,
         });
       }
       if (elSlow) { // remove
@@ -58,7 +56,6 @@ export const update = (storage, module, run, settings) => {
     runElems.push({
       a1: ex.a1,
       a2: ex.a2,
-      r: ex.r,
       resp: ex.response,
       correct,
       slow,

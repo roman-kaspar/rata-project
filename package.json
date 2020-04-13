@@ -1,14 +1,14 @@
 {
   "name": "rata-project",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Elementary school exercises",
   "private": true,
   "scripts": {
-    "start": "yarn run gen-ver && react-scripts start",
-    "build": "yarn run gen-ver && yarn test && react-scripts build && yarn build:sw && cp src/version.json build && yarn run tar",
+    "start": "yarn gen-ver && react-scripts start",
+    "build": "yarn gen-ver && yarn test && react-scripts build && yarn build:sw && cp src/version.json build && yarn tar",
     "build:sw": "rm -f build/asset-manifest.json build/static/js/*.js.map build/static/css/*.css.map build/service-worker.js build/precache-manifest.*.js && cd src/service-worker && node ./build.js && cd ../..",
     "serve": "serve -s build",
-    "test": "yarn run lint && react-scripts test --watchAll=false",
+    "test": "yarn lint && react-scripts test --watchAll=false",
     "gen-ver": "echo \"export const version = '${npm_package_version}';\" > src/core/version.js && echo \"{\n  \\\"version\\\": \\\"${npm_package_version}\\\"\n}\" > src/version.json",
     "lint": "eslint src",
     "tar": "mkdir -p dist && rm -f dist/*.tgz && cd build && COPYFILE_DISABLE=1 tar cfz ../dist/${npm_package_name}-${npm_package_version}.tgz * && cd .. && echo '\n*** DONE ***' && ls -1 dist"
@@ -21,7 +21,7 @@
     "react-icons": "^3.7.0",
     "react-redux": "7.1.3",
     "react-router5": "7.1.0",
-    "react-scripts": "3.3.0",
+    "react-scripts": "3.4.0",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-router5": "7.0.2",

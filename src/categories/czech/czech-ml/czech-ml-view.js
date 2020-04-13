@@ -15,6 +15,7 @@ const CzechML = (props) => {
 
   const current = run[run.length - 1];
   const Problem = module.view();
+  const choices = module.extra('choices')(current);
 
   return (
     <div className="czech-ml">
@@ -27,7 +28,7 @@ const CzechML = (props) => {
           <Problem options={current} />
         </div>
       </div>
-      <ChoiceTwoPad val1={current.v1} val2={current.v2} submit={submit} />
+      <ChoiceTwoPad val1={choices.val1} val2={choices.val2} submit={submit} />
       <div className="padding"></div>
     </div>
   );

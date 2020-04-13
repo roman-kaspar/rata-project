@@ -93,6 +93,7 @@ const ProblemsView = (options) => {
   }
   const arr = data[type];
   const View = categories.moduleView(categ, module);
+  const correctResp = categories.moduleCorrectResp(categ, module);
   return (
     <div className="results">
       <h2>problémové příklady: {(type === 'slow' ? 'rychlost' : 'správnost')}</h2>
@@ -100,7 +101,7 @@ const ProblemsView = (options) => {
         {
           arr.map((item, idx) => (
             <li key={idx}>
-              <View options={item} />&nbsp;=&nbsp;{item.r.toString()}
+              <View options={item} />&nbsp;=&nbsp;{correctResp(item)}
             </li>
           ))
         }
@@ -124,6 +125,7 @@ const RunView = (options) => {
   }
   const { categ, module } = options;
   const View = categories.moduleView(categ, module);
+  const correctResp = categories.moduleCorrectResp(categ, module);
   const run = runs[idx];
   const praises = ['výborně', 'skvěle', 'super', 'paráda', 'výtečně', 'dokonale', 'úžasně'];
   const praiseStar = praises[Math.floor(Math.random() * praises.length)];
@@ -157,7 +159,11 @@ const RunView = (options) => {
                 <td><Icon className={cx} /></td>
                 <td><View options={row} /></td>
                 <td>=</td>
-                <td>{row.resp} {row.correct ? '' : `(${row.r.toString()})`}</td>
+                <td>
+                  <div className="response">
+                    {row.resp} {row.correct ? '' : `(${correctResp(row)})`}
+                  </div>
+                </td>
               </tr>
             );
           })

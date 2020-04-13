@@ -127,6 +127,11 @@ export class Category {
     return mod.view();
   }
 
+  moduleCorrectResp(module) {
+    const mod = this._modules.find((m) => (m.routeName() === module));
+    return mod.correctResp();
+  }
+
   usage(storage) {
     const res = {
       finished: 0,

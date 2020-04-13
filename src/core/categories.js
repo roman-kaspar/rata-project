@@ -110,6 +110,11 @@ class Categories {
     return cat.moduleView(module);
   }
 
+  moduleCorrectResp(category, module) {
+    const cat = this._categories.find((c) => (c.routeName() === category));
+    return cat.moduleCorrectResp(module);
+  }
+
   results(category, module, params, store) {
     if (category) {
       const cat = this._categories.find((c) => (c.routeName() === category));

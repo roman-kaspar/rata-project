@@ -1,12 +1,5 @@
 import { initCategoryStorage } from '../../utils';
 
-// shape of the stored data:
-// {
-//   i: question,
-//   r: response, e.g. 'cislo jednotne, rod muzsky ziv., 3. pad'
-//   c: ^^
-// }
-
 // maximum wrong / slow exercises to keep per module
 const KEEP_WRONG = 20;
 const KEEP_SLOW = 15;
@@ -15,7 +8,7 @@ const KEEP_RUNS = 5;
 // when to give the third star
 const MAX_STARS_RUNS = 3;
 
-export const update = (storage, module, run, settings) => {
+export const update = (storage, module, correctResp, run, settings) => {
   const store = initCategoryStorage(storage, module);
   const mod = store.modules[module];
   mod.exercises = settings.exercises;
@@ -26,7 +19,7 @@ export const update = (storage, module, run, settings) => {
   run.forEach((ex) => {
     const elWrong = mod.wrong.find((e) => (e.i === ex.i));
     const elSlow = mod.slow.find((e) => (e.i === ex.i));
-    const correct = (ex.c === ex.response);
+    const correct = (correctResp(ex) === ex.response);
     const time = ex.endMs - ex.startMs;
     const slow = (time > settings.timeLimit);
 
@@ -38,10 +31,7 @@ export const update = (storage, module, run, settings) => {
       }
       if (slow) { runSlow += 1; }
       if (slow && !elSlow && (mod.slow.length < KEEP_SLOW)) { // insert
-        mod.slow.push({
-          i: ex.i,
-          r: ex.c,
-        });
+        mod.slow.push({ i: ex.i });
       }
       if (!slow && elSlow) { // remove
         const idx = mod.slow.indexOf(elSlow);
@@ -49,10 +39,7 @@ export const update = (storage, module, run, settings) => {
       }
     } else { // not correct
       if (!elWrong && (mod.wrong.length < KEEP_WRONG)) { // insert
-        mod.wrong.push({
-          i: ex.i,
-          r: ex.c,
-        });
+        mod.wrong.push({ i: ex.i });
       }
       if (elSlow) { // remove
         const idx = mod.slow.indexOf(elSlow);
@@ -62,7 +49,6 @@ export const update = (storage, module, run, settings) => {
 
     runElems.push({
       i: ex.i,
-      r: ex.c,
       resp: ex.response,
       correct,
       slow,
