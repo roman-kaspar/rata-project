@@ -3,6 +3,7 @@ import { dictionary as dictL } from './module-w-iy-l';
 import { dictionary as dictM } from './module-w-iy-m';
 import { dictionary as dictP } from './module-w-iy-p';
 import { dictionary as dictS } from './module-w-iy-s';
+import { dictionary as dictV } from './module-w-iy-v';
 
 const correct2idx = {
   i: 0,
@@ -35,3 +36,4 @@ it('tests dictionaty of module-w-iy-l', () => { testDictionary(dictL, 'l'); });
 it('tests dictionaty of module-w-iy-m', () => { testDictionary(dictM, 'm'); });
 it('tests dictionaty of module-w-iy-p', () => { testDictionary(dictP, 'p'); });
 it('tests dictionaty of module-w-iy-s', () => { testDictionary(dictS, 's'); });
+it('tests dictionaty of module-w-iy-v', () => { testDictionary(dictV, 'v'); });

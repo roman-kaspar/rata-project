@@ -152,6 +152,11 @@ const TopLevelView = ({ data }) => (
 
 const ChangeLogView = () => (
   <div className="help">
+    <h2>1.4.1</h2>
+    <ul>
+      <li>publikováno: 16.4.2020</li>
+      <li>modul "vyjmenovaná slova po V"</li>
+    </ul>
     <h2>1.4.0</h2>
     <ul>
       <li>publikováno: 14.4.2020</li>
