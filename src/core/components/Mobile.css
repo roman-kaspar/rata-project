@@ -7,3 +7,12 @@ div.mobile-error span.bold {
   font-weight: 400;
   color: #111;
 }
+
+hr.mobile-error {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+div.english {
+  color: #888;
+}

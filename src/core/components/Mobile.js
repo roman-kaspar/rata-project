@@ -43,6 +43,22 @@ export const MobileOnly = ({ width, height }) => (
     <div className="mobile-error">
       Děkujeme za pochopení.
     </div>
+    <hr className="mobile-error" />
+    <div className="mobile-error english">
+      This is an educational application for children. It is meant for mobile devices only,
+      that's why you see this message now. Please open the page on your mobile device,
+      or resize the window of your browser to match the screen resolution of a phone
+      (e.g. using Developer Tools of Google Chrome desktop browser).
+    </div>
+    <div className="mobile-error english">
+      Also, the application is in Czech only. It is for children attending Czech elementary
+      schools, so having it translated into more languages doesn't make too much sense.
+      But you can still give it a try, some subjects (e.g. mathematics) are the same in
+      all the languages :-).
+    </div>
+    <div className="mobile-error english">
+      Thank you for your understanding.
+    </div>
   </>
 );
 
