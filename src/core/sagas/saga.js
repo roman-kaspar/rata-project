@@ -183,6 +183,10 @@ function resetArticleScroll() {
   for (const article of collection) { article.scrollTo(0, 0); } // eslint-disable-line no-restricted-syntax
 }
 
+function openLink({ target }) {
+  window.open(target);
+}
+
 export function* saga() {
   yield fork(categories.sagas());
   // app saga
@@ -195,6 +199,7 @@ export function* saga() {
   yield takeLatest(types.FINISH_INSTALLATION, finishInstallation);
   yield takeLatest(types.CHECK_ONLINE, checkOnline);
   yield takeLatest(types.RESET_SCROLL, resetArticleScroll);
+  yield takeLatest(types.OPEN_EXTERNAL_LINK, openLink);
   // inital actions
   yield put(actions.getViewport());
   yield put(actions.loadStorage());

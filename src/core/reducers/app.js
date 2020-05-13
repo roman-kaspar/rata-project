@@ -31,6 +31,8 @@ const { Types, Creators } = createActions({
   checkOnline: null, // handled in saga
   //
   resetScroll: null, // handled in saga
+  //
+  openExternalLink: ['target'], // handled in saga
 });
 
 export const types = Types;

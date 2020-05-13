@@ -1,0 +1,9 @@
+span.external-link {
+  font-weight: 400;
+  color: #091d3e;
+  text-decoration: underline;
+}
+
+span.external-link svg {
+  fill: #091d3e;
+}

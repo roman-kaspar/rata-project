@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { HelpButton } from './HelpButton';
+import { ExternalLink } from './ExternalLink';
 import { PARAMS as ROUTE_PARAMS } from '../router/routes';
 import {
   tsToStr,
@@ -134,7 +135,19 @@ const TopLevelView = ({ data }) => (
       Technické informace
     </h2>
     <p>
-      Aplikace je zdarma, včetně zdrojového kódu, který je veřejně dostupný na GitHubu.
+      Aplikace je zdarma, včetně zdrojového kódu, který je veřejně dostupný
+      na <ExternalLink target="https://github.com/roman-kaspar/rata-project">
+        GitHubu <svg
+          style={{ marginBottom: '-2px', width: '18px', height: '18px' }}
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"
+        >
+          <path d="M1000 508c0 232-160 429-375 485v-131c0-41-10-98-52-131 134-20 239-99 239-223 0-51-21-102-58-144
+            11-47 17-105-4-148-53 5-106 32-145 56-33-8-67-14-105-14s-73 6-106 14c-39-24-91-51-144-56-21 43-16 101-5
+            148-37 42-57 93-57 144 0 124 105 203 239 223-20 15-32 36-40 57-105 2-189-81-190-81-5-4-12-5-16-2-6 3-9
+            10-7 16 2 5 44 124 201 172v100c-215-56-375-253-375-485 0-275 223-500 500-500 275 0 500 225 500 500z">
+          </path>
+        </svg>
+      </ExternalLink>.
     </p>
     <p>
       <HelpButton className="tech" params={{
