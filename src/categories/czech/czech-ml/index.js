@@ -12,6 +12,7 @@ import { wIYm } from './module-w-iy-m';
 import { wIYp } from './module-w-iy-p';
 import { wIYs } from './module-w-iy-s';
 import { wIYv } from './module-w-iy-v';
+import { wIYz } from './module-w-iy-z';
 
 export const czechML = new Category({
   routeName,
@@ -30,3 +31,4 @@ czechML.addModule(wIYm);
 czechML.addModule(wIYp);
 czechML.addModule(wIYs);
 czechML.addModule(wIYv);
+czechML.addModule(wIYz);

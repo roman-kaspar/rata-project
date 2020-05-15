@@ -4,6 +4,7 @@ import { dictionary as dictM } from './module-w-iy-m';
 import { dictionary as dictP } from './module-w-iy-p';
 import { dictionary as dictS } from './module-w-iy-s';
 import { dictionary as dictV } from './module-w-iy-v';
+import { dictionary as dictZ } from './module-w-iy-z';
 
 const correct2idx = {
   i: 0,
@@ -18,6 +19,7 @@ const testDictionary = (dict, letter) => {
   dict.forEach((item) => {
     expect(typeof item).toBe('object');
     expect(typeof item.text).toBe('string');
+    // if (item.text.length > 19) { console.log(item.text); }
     expect(item.text.length).toBeLessThan(20);
     const matches1 = item.text.match(rx1);
     expect(matches1).toBeTruthy();
@@ -37,3 +39,4 @@ it('tests dictionaty of module-w-iy-m', () => { testDictionary(dictM, 'm'); });
 it('tests dictionaty of module-w-iy-p', () => { testDictionary(dictP, 'p'); });
 it('tests dictionaty of module-w-iy-s', () => { testDictionary(dictS, 's'); });
 it('tests dictionaty of module-w-iy-v', () => { testDictionary(dictV, 'v'); });
+it('tests dictionaty of module-w-iy-z', () => { testDictionary(dictZ, 'z'); });
