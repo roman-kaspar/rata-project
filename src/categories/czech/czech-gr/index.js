@@ -7,6 +7,7 @@ import { Help } from './czech-gr-help';
 
 //
 import { nouns } from './module-nouns';
+import { verbs } from './module-verbs';
 
 export const czechGr = new Category({
   routeName,
@@ -20,3 +21,4 @@ export const czechGr = new Category({
 });
 
 czechGr.addModule(nouns);
+czechGr.addModule(verbs);

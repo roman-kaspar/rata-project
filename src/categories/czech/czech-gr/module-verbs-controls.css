@@ -1,0 +1,13 @@
+div.verbs-submit-button button.submit-button {
+  width: calc(33.333333% - 2px);
+  margin-bottom: 3px;
+  height: 60px;
+  margin-top: 12px;
+  border-radius: 6px;
+  background-color: white;
+}
+
+div.verbs-submit-button button.submit-button svg {
+  font-size: 24px;
+  padding-top: 3px;
+}

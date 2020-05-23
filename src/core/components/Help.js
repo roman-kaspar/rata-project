@@ -159,12 +159,20 @@ const TopLevelView = ({ data }) => (
         routeParams: { system: true },
       }} />
     </p>
-    <p>Copyright © 2020 Roman Kašpar</p>
+    <p>Copyright © 2020 <ExternalLink target="https://www.roman-kaspar.cz/">
+      Roman Kašpar
+      <span className="profile-img"></span>
+    </ExternalLink>.</p>
   </div>
 );
 
 const ChangeLogView = () => (
   <div className="help">
+    <h2>1.4.5</h2>
+    <ul>
+      <li>publikováno: 24.5.2020</li>
+      <li>modul "slovesa / časování: osoba, číslo, čas"</li>
+    </ul>
     <h2>1.4.4</h2>
     <ul>
       <li>publikováno: 15.5.2020</li>
