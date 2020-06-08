@@ -21,7 +21,7 @@ but uses caching mechanisms and web worker process, so that it is fully working 
 One of the properties of PWAs is that you can use menu in the mobile browser and pick "Add to home screen"
 and then the web application behaves as any other application installed from App Store.
 
-The application is hosted at [https://rata.roman-kaspar.cz/)](https://rata.roman-kaspar.cz/).
+The application is hosted at [https://rata.roman-kaspar.cz/](https://rata.roman-kaspar.cz/).
 
 Once installed the application (when online) pings the server to check for newer versions. When available,
 the app will auto-update to the newest version.
