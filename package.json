@@ -45,5 +45,15 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "bumpVersion": "patch",
+    "automerge": true,
+    "major": {
+      "automerge": false
+    }
+  }
 }
