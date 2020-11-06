@@ -1,6 +1,6 @@
 {
   "name": "rata-project",
-  "version": "1.4.20",
+  "version": "1.4.21",
   "description": "Elementary school exercises",
   "private": true,
   "scripts": {
@@ -34,7 +34,7 @@
     "uuid": "3.4.0"
   },
   "devDependencies": {
-    "eslint-config-airbnb-base": "14.2.0",
+    "eslint-config-airbnb-base": "14.2.1",
     "workbox-build": "4.3.1"
   },
   "author": "Roman Kaspar <roman.kaspar@seznam.cz>",
