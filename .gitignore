@@ -11,3 +11,5 @@ rata.nginx
 *.zip
 *.tgz
 *.log
+
+.eslintcache

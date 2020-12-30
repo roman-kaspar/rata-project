@@ -66,7 +66,7 @@ export const dictionary = [
   { text: 'vy *zvířata*!', resp: [1, 3, 4] },
   { text: 'vy *zvířata*!', resp: [1, 3, 4] },
   { text: 'krmila ho *sladkostmi*', resp: [1, 2, 6] },
-  { text: 'curk na *buchtách*', resp: [1, 2, 5] },
+  { text: 'cukr na *buchtách*', resp: [1, 2, 5] },
   { text: 'obědvají v *restauraci*', resp: [0, 2, 5] },
   { text: 'po *jídle* uklidí', resp: [0, 3, 5] },
   { text: 'za *jídlo* poděkuje', resp: [0, 3, 3] },
