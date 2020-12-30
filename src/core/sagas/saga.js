@@ -5,7 +5,7 @@ import {
   takeLatest,
   select,
 } from 'redux-saga/effects';
-import uuidv4 from 'uuid/v4'; // random
+import { v4 as uuidv4 } from 'uuid'; // random
 import LZString from 'lz-string';
 
 import { version } from '../version';
