@@ -1,6 +1,6 @@
 {
   "name": "rata-project",
-  "version": "1.4.20",
+  "version": "1.4.21",
   "description": "Elementary school exercises",
   "private": true,
   "scripts": {
@@ -31,7 +31,7 @@
     "router5-plugin-browser": "7.0.2",
     "router5-transition-path": "7.0.1",
     "serve": "11.3.2",
-    "uuid": "3.4.0"
+    "uuid": "8.3.2"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "14.2.0",
