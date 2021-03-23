@@ -1,6 +1,6 @@
 {
   "name": "rata-project",
-  "version": "1.4.32",
+  "version": "1.4.33",
   "description": "Elementary school exercises",
   "private": true,
   "scripts": {
@@ -19,7 +19,7 @@
     "react-div-100vh": "0.5.6",
     "react-dom": "17.0.2",
     "react-icons": "4.2.0",
-    "react-redux": "7.2.2",
+    "react-redux": "7.2.3",
     "react-router5": "8.0.1",
     "react-scripts": "4.0.3",
     "redux": "4.0.5",
