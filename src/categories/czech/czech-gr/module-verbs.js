@@ -100,7 +100,7 @@ export const dictionary = [
   { text: 'poslouchám', resp: [0, 0, 1] },
   { text: 'odložili jste', resp: [1, 1, 0] },
   { text: 'roztřídili', resp: [2, 1, 0] },
-  { text: 'budeš stříhat', resp: [1, 1, 2] },
+  { text: 'budeš stříhat', resp: [1, 0, 2] },
   { text: 'budu lézt', resp: [0, 0, 2] },
   { text: 'kopali jsme', resp: [0, 1, 0] },
   { text: 'opravujete', resp: [1, 1, 1] },

@@ -168,6 +168,11 @@ const TopLevelView = ({ data }) => (
 
 const ChangeLogView = () => (
   <div className="help">
+    <h2>1.4.34</h2>
+    <ul>
+      <li>publikováno: 5.4.2021</li>
+      <li>opravy chyb</li>
+    </ul>
     <h2>1.4.25</h2>
     <ul>
       <li>publikováno: 30.12.2020</li>
